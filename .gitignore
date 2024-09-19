@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+temp/
+logs/
+output/
+local/
+*.bak*
+*.log
+*.sqlite
+# items/
+# *.csv
+# *.gdx
+# project.json
