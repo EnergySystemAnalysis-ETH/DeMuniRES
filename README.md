@@ -1,3 +1,3 @@
 # DeMuniRES
 
-[Gitter chat](!BFVoOToUTyuZHEsAuB:gitter.im)
+[Gitter chat](https://matrix.to/#/!mJYtwmnXoSZStfxowP:gitter.im?via=gitter.im)
