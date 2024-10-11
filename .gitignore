@@ -6,7 +6,7 @@ output/
 local/
 *.bak*
 *.log
-*.sqlite
+# *.sqlite
 # items/
 # *.csv
 # *.gdx
