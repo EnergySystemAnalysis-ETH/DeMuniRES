@@ -1,0 +1,13 @@
+{
+    "name": "energy_balance",
+    "tooltype": "python",
+    "includes": [
+        "energy_balance"
+    ],
+    "description": "Visualize the annual energy balance of the nodes at node (building), district, and municipality levels",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "."
+}

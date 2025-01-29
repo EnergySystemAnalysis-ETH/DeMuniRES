@@ -1,0 +1,13 @@
+{
+    "name": "supply_node",
+    "tooltype": "python",
+    "includes": [
+        "supply_node"
+    ],
+    "description": "Visualize the optimized annual unit or connection flow results to or from the nodes at node (building), district, and municipality levels (to node values can be viewed as supplies of the nodes, from node values can be viewed as excess)",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "."
+}

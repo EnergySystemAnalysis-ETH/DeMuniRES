@@ -1,0 +1,60 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "demand_export",
+    "description": "",
+    "mappings": {
+        "Mapping (1)": {
+            "type": "entity_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "EntityClass",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": 0,
+                    "filter_re": "^demand$",
+                    "header": "Parameter"
+                },
+                {
+                    "map_type": "ParameterValueList",
+                    "position": "hidden",
+                    "ignorable": true
+                },
+                {
+                    "map_type": "Entity",
+                    "position": 1,
+                    "header": "Node"
+                },
+                {
+                    "map_type": "Alternative",
+                    "position": 4,
+                    "header": "Scenario"
+                },
+                {
+                    "map_type": "ParameterValueType",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "IndexName",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueIndex",
+                    "position": 2,
+                    "header": "Time"
+                },
+                {
+                    "map_type": "ExpandedValue",
+                    "position": 3,
+                    "header": "Demand"
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "group_fn": "no_group",
+            "use_fixed_table_name": false
+        }
+    }
+}

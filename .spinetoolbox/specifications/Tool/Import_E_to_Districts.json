@@ -1,0 +1,13 @@
+{
+    "name": "Import_E_to_Districts",
+    "tooltype": "python",
+    "includes": [
+        "Import_E_to_Districts"
+    ],
+    "description": "Visualize the imported electricity to District 1 and 2 at hourly, daily and monthly resolutions",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "."
+}

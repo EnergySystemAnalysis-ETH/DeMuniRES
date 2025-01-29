@@ -1,0 +1,48 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "battery_capacity",
+    "description": "Extract the battery capacity (Wh) of District 2 ",
+    "mappings": {
+        "Mapping (1)": {
+            "type": "entity_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "EntityClass",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": -2,
+                    "filter_re": "node_state_cap"
+                },
+                {
+                    "map_type": "ParameterValueList",
+                    "position": "hidden",
+                    "ignorable": true
+                },
+                {
+                    "map_type": "Entity",
+                    "position": 0,
+                    "filter_re": "BatterySto"
+                },
+                {
+                    "map_type": "Alternative",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueType",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValue",
+                    "position": 4
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "group_fn": "no_group",
+            "use_fixed_table_name": false
+        }
+    }
+}

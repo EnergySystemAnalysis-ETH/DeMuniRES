@@ -1,0 +1,81 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "Battery_state",
+    "description": "",
+    "mappings": {
+        "Mapping (1)": {
+            "type": "entity_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "EntityClass",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Dimension",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Dimension",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Dimension",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": -2,
+                    "filter_re": "node_state"
+                },
+                {
+                    "map_type": "ParameterValueList",
+                    "position": "hidden",
+                    "ignorable": true
+                },
+                {
+                    "map_type": "Entity",
+                    "position": -3,
+                    "filter_re": "BatterySto"
+                },
+                {
+                    "map_type": "Element",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Element",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Element",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Alternative",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueType",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "IndexName",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueIndex",
+                    "position": 0,
+                    "header": "Time"
+                },
+                {
+                    "map_type": "ExpandedValue",
+                    "position": 5
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "group_fn": "no_group",
+            "use_fixed_table_name": false
+        }
+    }
+}

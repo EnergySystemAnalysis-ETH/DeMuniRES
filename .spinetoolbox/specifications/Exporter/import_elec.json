@@ -1,0 +1,66 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "Import_Elec",
+    "description": "",
+    "mappings": {
+        "Mapping (1)": {
+            "type": "entity_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "EntityClass",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Dimension",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": "hidden",
+                    "filter_re": "unit_flow"
+                },
+                {
+                    "map_type": "ParameterValueList",
+                    "position": "hidden",
+                    "ignorable": true
+                },
+                {
+                    "map_type": "Entity",
+                    "position": -3,
+                    "filter_re": "variables.*Import_E.*District1_E|variables.*Import_E.*District2_E"
+                },
+                {
+                    "map_type": "Element",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "Alternative",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueType",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "IndexName",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueIndex",
+                    "position": 0,
+                    "header": "Time"
+                },
+                {
+                    "map_type": "ExpandedValue",
+                    "position": 6,
+                    "ignorable": true
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "group_fn": "no_group",
+            "use_fixed_table_name": false
+        }
+    }
+}
