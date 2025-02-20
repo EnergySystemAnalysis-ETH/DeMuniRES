@@ -6,26 +6,26 @@ Repository for **De**centralised **Muni**cipality **R**enewable **E**nergy **S**
 
 1. Python environment for [`spinetoolbox`](https://github.com/spine-tools/Spine-Toolbox)
 
-- Prerequisites: 
-	- **python 3.13**
-	- [git](https://git-scm.com/downloads)
+    0. Prerequisites: 
+        - **python 3.13**
+        - [git](https://git-scm.com/downloads)
 
-- **Option 1** Installation in [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+    1. Python environment setup
+        -**Option 1** Installation in [miniconda](https://repo.anaconda.com/miniconda/)
 
-    - In OS terminal (cmd or PowerShell):
+            - In OS terminal (cmd or PowerShell):
+            ```console
+            conda create -n DeMuniRES python=3.13 plotly
+            conda activate DeMuniRES
+            ```
 
-        ```console
-        conda create -n DeMuniRES python=3.13 plotly
-        conda activate DeMuniRES
-        ```
-
-    - Install the active dev version `spinetoolbox` (need `git` installed):
+    2. Install the active dev version `spinetoolbox` (need `git` installed) with the targeted environment activated:
 
         ```console
         pip install git+https://github.com/spine-tools/spinetoolbox-dev
         ```
-    
-    - Update package to the latest commit: reinstall the package using the same command.
+
+    3. Update package to the latest commit: reinstall the package using the same command.
 
 2. Set up Julia envirionment and `SpineOpt.jl` in the `spinetoolbox`
 
