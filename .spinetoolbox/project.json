@@ -5,7 +5,87 @@
         "settings": {
             "enable_execute_all": true
         },
-        "specifications": {},
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/supply_node.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/demand_node.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/carbon_emission.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/system_costs.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/tradeoffs.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/Battery_SoC.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/Import_E_to_Districts.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/energy_balance.json"
+                }
+            ],
+            "Exporter": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/battery_state.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/demand.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/import_elec.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/unit_or_connection_flow_export.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/battery_capacity.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/objectives.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/importe_chp_gasboiler.json"
+                }
+            ]
+        },
         "connections": [
             {
                 "name": "from InitModelConfig to Intialisation",
@@ -103,49 +183,6 @@
                 }
             },
             {
-                "name": "from Optimisation-SpineOpt to OutputDB-SpineOpt",
-                "from": [
-                    "Optimisation-SpineOpt",
-                    "right"
-                ],
-                "to": [
-                    "OutputDB-SpineOpt",
-                    "left"
-                ],
-                "options": {
-                    "purge_before_writing": true,
-                    "purge_settings": {
-                        "object_class": true,
-                        "relationship_class": true,
-                        "parameter_value_list": true,
-                        "list_value": true,
-                        "parameter_definition": true,
-                        "object": true,
-                        "relationship": true,
-                        "entity_group": true,
-                        "parameter_value": true,
-                        "alternative": true,
-                        "scenario": true,
-                        "scenario_alternative": true,
-                        "feature": true,
-                        "tool": true,
-                        "tool_feature": true,
-                        "tool_feature_method": true,
-                        "metadata": true,
-                        "entity_metadata": true,
-                        "parameter_value_metadata": true
-                    }
-                },
-                "filter_settings": {
-                    "known_filters": {},
-                    "auto_online": true,
-                    "enabled_filter_types": {
-                        "alternative_filter": false,
-                        "scenario_filter": true
-                    }
-                }
-            },
-            {
                 "name": "from Load SpineOpt template to InitModelConfig",
                 "from": [
                     "Load SpineOpt template",
@@ -208,6 +245,454 @@
                         "scenario_filter": true
                     }
                 }
+            },
+            {
+                "name": "from OutputDB-SpineOpt to Battery_state",
+                "from": [
+                    "OutputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "Battery_state",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@OutputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Optimisation-SpineOpt@2024-10-11T21:12:49": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from OutputDB-SpineOpt to Import_Elec",
+                "from": [
+                    "OutputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "Import_Elec",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@OutputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Optimisation-SpineOpt@2024-10-11T21:12:49": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from OutputDB-SpineOpt to unit_or_connection_flow_export",
+                "from": [
+                    "OutputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "unit_or_connection_flow_export",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@OutputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Optimisation-SpineOpt@2024-10-11T21:12:49": true
+                            }
+                        }
+                    },
+                    "auto_online": false,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from InputDB-SpineOpt to demand_export",
+                "from": [
+                    "InputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "demand_export",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@InputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Base": true
+                            }
+                        }
+                    },
+                    "auto_online": false,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from unit_or_connection_flow_export to supply_node",
+                "from": [
+                    "unit_or_connection_flow_export",
+                    "right"
+                ],
+                "to": [
+                    "supply_node",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from demand_export to demand_node",
+                "from": [
+                    "demand_export",
+                    "right"
+                ],
+                "to": [
+                    "demand_node",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from unit_or_connection_flow_export to Carbon_Emission",
+                "from": [
+                    "unit_or_connection_flow_export",
+                    "right"
+                ],
+                "to": [
+                    "Carbon_Emission",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from InputDB-SpineOpt to battery_capacity",
+                "from": [
+                    "InputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "battery_capacity",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@InputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Base": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from OutputDB-SpineOpt to objectives",
+                "from": [
+                    "OutputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "objectives",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@OutputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Optimisation-SpineOpt@2024-10-11T21:12:49": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from objectives to system_costs",
+                "from": [
+                    "objectives",
+                    "right"
+                ],
+                "to": [
+                    "system_costs",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from OutputDB-SpineOpt to ImportE_CHP_GasBoiler",
+                "from": [
+                    "OutputDB-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "ImportE_CHP_GasBoiler",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@OutputDB-SpineOpt": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Optimisation-SpineOpt@2024-10-11T21:12:49": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": true,
+                        "scenario_filter": false
+                    }
+                }
+            },
+            {
+                "name": "from ImportE_CHP_GasBoiler to Tradeoffs",
+                "from": [
+                    "ImportE_CHP_GasBoiler",
+                    "right"
+                ],
+                "to": [
+                    "Tradeoffs",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Carbon_Intensity to Tradeoffs",
+                "from": [
+                    "Carbon_Intensity",
+                    "right"
+                ],
+                "to": [
+                    "Tradeoffs",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from objectives to Tradeoffs",
+                "from": [
+                    "objectives",
+                    "right"
+                ],
+                "to": [
+                    "Tradeoffs",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Carbon_Intensity to Carbon_Emission",
+                "from": [
+                    "Carbon_Intensity",
+                    "right"
+                ],
+                "to": [
+                    "Carbon_Emission",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Optimisation-SpineOpt to OutputDB-SpineOpt",
+                "from": [
+                    "Optimisation-SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "OutputDB-SpineOpt",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from unit_or_connection_flow_export to energy_balance",
+                "from": [
+                    "unit_or_connection_flow_export",
+                    "right"
+                ],
+                "to": [
+                    "energy_balance",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from demand_export to energy_balance",
+                "from": [
+                    "demand_export",
+                    "right"
+                ],
+                "to": [
+                    "energy_balance",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Import_Elec to Import_E_to_Districts",
+                "from": [
+                    "Import_Elec",
+                    "right"
+                ],
+                "to": [
+                    "Import_E_to_Districts",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from Battery_state to Battery_SoC",
+                "from": [
+                    "Battery_state",
+                    "right"
+                ],
+                "to": [
+                    "Battery_SoC",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
+            },
+            {
+                "name": "from battery_capacity to Battery_SoC",
+                "from": [
+                    "battery_capacity",
+                    "right"
+                ],
+                "to": [
+                    "Battery_SoC",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             }
         ],
         "jumps": []
@@ -216,8 +701,8 @@
         "InputDB-SpineOpt": {
             "type": "Data Store",
             "description": "",
-            "x": -129.2696762143101,
-            "y": -77.3160085810566,
+            "x": -118.74176051683166,
+            "y": -73.5564103375824,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -225,7 +710,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/inputdb-spineopt/InputDB-SpineOpt.sqlite"
+                    "path": ".spinetoolbox/items/inputdb-spineopt/inputdb-spineopt.sqlite"
                 },
                 "schema": ""
             }
@@ -242,7 +727,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/initmodelconfig/InitModelConfig.sqlite"
+                    "path": ".spinetoolbox/items/initmodelconfig/initmodelconfig.sqlite"
                 },
                 "schema": ""
             }
@@ -277,8 +762,8 @@
         "Optimisation-SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": 56.40618950341118,
-            "y": -75.54400379921138,
+            "x": 84.08144693482038,
+            "y": -77.82504060150414,
             "specification": "Run SpineOpt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -297,8 +782,8 @@
         "OutputDB-SpineOpt": {
             "type": "Data Store",
             "description": "",
-            "x": 230.66102493359216,
-            "y": -83.61576158138776,
+            "x": 230.0010683928102,
+            "y": -67.33000790505722,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -306,7 +791,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/outputdb-spineopt/OutputDB-SpineOpt.sqlite"
+                    "path": ".spinetoolbox/items/outputdb-spineopt/outputdb-spineopt.sqlite"
                 },
                 "schema": ""
             }
@@ -323,10 +808,277 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/systemconfig/SystemConfig.sqlite"
+                    "path": ".spinetoolbox/items/systemconfig/systemconfig.sqlite"
                 },
                 "schema": ""
             }
+        },
+        "Battery_state": {
+            "type": "Exporter",
+            "description": "",
+            "x": 419.57216032383883,
+            "y": -338.3237497942772,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "out_label": "Battery_state"
+                }
+            ],
+            "specification": "Battery_state"
+        },
+        "demand_export": {
+            "type": "Exporter",
+            "description": "",
+            "x": 426.79617609027446,
+            "y": 349.7551646206674,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@InputDB-SpineOpt",
+                    "out_label": "InputDB-SpineOpt_exported@demand_export"
+                }
+            ],
+            "specification": "demand_export"
+        },
+        "unit_or_connection_flow_export": {
+            "type": "Exporter",
+            "description": "",
+            "x": 411.56928546215704,
+            "y": 218.75062773662833,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "out_label": "OutputDB-SpineOpt_exported@unit_or_connection_flow_export"
+                }
+            ],
+            "specification": "unit_or_connection_flow_export"
+        },
+        "Import_Elec": {
+            "type": "Exporter",
+            "description": "",
+            "x": 414.2603473224116,
+            "y": -246.31451618180313,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "out_label": "OutputDB-SpineOpt_exported@Import_Elec"
+                }
+            ],
+            "specification": "Import_Elec"
+        },
+        "demand_node": {
+            "type": "Tool",
+            "description": "",
+            "x": 572.9385867635795,
+            "y": 399.37076650170695,
+            "specification": "demand_node",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "InputDB-SpineOpt_exported@demand_export"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "supply_node": {
+            "type": "Tool",
+            "description": "",
+            "x": 570.7335747575808,
+            "y": 183.97200814597056,
+            "specification": "supply_node",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@unit_or_connection_flow_export"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Carbon_Emission": {
+            "type": "Tool",
+            "description": "",
+            "x": 562.309589773738,
+            "y": 78.09730308027375,
+            "specification": "Carbon_Emission",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@unit_or_connection_flow_export"
+                },
+                {
+                    "type": "resource",
+                    "arg": "<project>/.spinetoolbox/Commodity_Carbon_Intensity.csv"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Carbon_Intensity": {
+            "type": "Data Connection",
+            "description": "",
+            "x": 417.34977684789965,
+            "y": 83.68766188460015,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/Commodity_Carbon_Intensity.csv"
+                }
+            ],
+            "db_references": []
+        },
+        "battery_capacity": {
+            "type": "Exporter",
+            "description": "",
+            "x": 422.15384087136255,
+            "y": -432.7609182378524,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@InputDB-SpineOpt",
+                    "out_label": "battery_capacity"
+                }
+            ],
+            "specification": "battery_capacity"
+        },
+        "objectives": {
+            "type": "Exporter",
+            "description": "",
+            "x": 418.31873515624966,
+            "y": -31.16381300484842,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "out_label": "OutputDB-SpineOpt_exported@objectives"
+                }
+            ],
+            "specification": "objectives"
+        },
+        "system_costs": {
+            "type": "Tool",
+            "description": "",
+            "x": 581.4267792296824,
+            "y": -25.943924532134627,
+            "specification": "system_costs",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@objectives"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "ImportE_CHP_GasBoiler": {
+            "type": "Exporter",
+            "description": "",
+            "x": 421.55638185061446,
+            "y": -135.10406163015782,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "out_label": "OutputDB-SpineOpt_exported@ImportE_CHP_GasBoiler"
+                }
+            ],
+            "specification": "ImportE_CHP_GasBoiler"
+        },
+        "Tradeoffs": {
+            "type": "Tool",
+            "description": "",
+            "x": 571.4744469676863,
+            "y": -137.45726822951298,
+            "specification": "Tradeoffs",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@ImportE_CHP_GasBoiler"
+                },
+                {
+                    "type": "resource",
+                    "arg": "<project>/.spinetoolbox/Commodity_Carbon_Intensity.csv"
+                },
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@objectives"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Battery_SoC": {
+            "type": "Tool",
+            "description": "",
+            "x": 573.5431315738313,
+            "y": -397.06038213995197,
+            "specification": "Battery_SoC",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "Battery_state"
+                },
+                {
+                    "type": "resource",
+                    "arg": "battery_capacity"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "energy_balance": {
+            "type": "Tool",
+            "description": "",
+            "x": 570.0194771706991,
+            "y": 286.05457566836,
+            "specification": "energy_balance",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "InputDB-SpineOpt_exported@demand_export"
+                },
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@unit_or_connection_flow_export"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Import_E_to_Districts": {
+            "type": "Tool",
+            "description": "",
+            "x": 569.0892452216149,
+            "y": -259.44337630217007,
+            "specification": "Import_E_to_Districts",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "OutputDB-SpineOpt_exported@Import_Elec"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
         }
     }
 }

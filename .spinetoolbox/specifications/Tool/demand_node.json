@@ -1,0 +1,13 @@
+{
+    "name": "demand_node",
+    "tooltype": "python",
+    "includes": [
+        "demand_node.py"
+    ],
+    "description": "Visualize the annual demands at node (building), district, and municipality levels",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "../../../OutputPloting"
+}

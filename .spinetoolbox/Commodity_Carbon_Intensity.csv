@@ -1,0 +1,4 @@
+Source,Carbon Intensity (g CO2-eq / kWh),Reference,Remarks,Link
+Grid,72,Electricity Maps,Last accessed: 14.12.2024; 30-day average used,https://app.electricitymaps.com/
+CHP,80," ""20241204_MORPHE2US 1.xlsx""",Continuing work from Thomas Baptistal's Project on SpineOpt ,
+Gas,198,"energuide.be /  ""20241204_MORPHE2US 1.xlsx""",Continuing work from Thomas Baptistal's Project on SpineOpt ,https://www.energuide.be/en/questions-answers/how-much-co2-does-my-home-emit/68/

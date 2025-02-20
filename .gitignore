@@ -1,13 +1,13 @@
 .idea/
 .vscode/
-temp/
 logs/
 output/
 local/
 *.bak*
 *.log
 *.sqlite
-# items/
+*export-manifest*
+
 # *.csv
 # *.gdx
 # project.json

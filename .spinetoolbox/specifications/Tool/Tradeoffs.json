@@ -1,0 +1,13 @@
+{
+    "name": "Tradeoffs",
+    "tooltype": "python",
+    "includes": [
+        "Tradeoffs.py"
+    ],
+    "description": "Compare scenarios with multiple KPIs",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "../../../OutputPloting"
+}

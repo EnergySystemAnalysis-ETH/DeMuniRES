@@ -1,0 +1,13 @@
+{
+    "name": "Battery_SoC",
+    "tooltype": "python",
+    "includes": [
+        "Battery_SoC.py"
+    ],
+    "description": "Visualize the battery SoC at hourly, daily and monthly resolutions",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "../../../OutputPloting"
+}

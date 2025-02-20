@@ -1,0 +1,13 @@
+{
+    "name": "Carbon_Emission",
+    "tooltype": "python",
+    "includes": [
+        "Carbon_Emission.py"
+    ],
+    "description": "Visualize the annual carbon emissions of the system (only consider the import electricity, CHP and Gas Boiler for now)",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "../../../OutputPloting"
+}

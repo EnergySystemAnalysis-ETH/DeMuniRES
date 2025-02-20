@@ -1,0 +1,13 @@
+{
+    "name": "system_costs",
+    "tooltype": "python",
+    "includes": [
+        "system_costs.py"
+    ],
+    "description": "Visualize the cost breakdowns of different scenarios (only consider connection flow, fixed O&M, variable O&M, and fuel costs for now)",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "includes_main_path": "../../../OutputPloting"
+}
