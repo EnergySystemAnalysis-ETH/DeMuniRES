@@ -31,6 +31,13 @@ Repository for **De**centralised **Muni**cipality **R**enewable **E**nergy **S**
 
     - forllow the [instruction](https://spine-toolbox.readthedocs.io/en/latest/how_to_run_spineopt.html)
 
+3. Launch the model with `spinetoolbox`
+
+    ```console
+    conda activate DeMuniRES
+    spinetoolbox
+    ```
+
 # Mathematical model
 
 The project is built upon the existing optimization model RE3ASON: *Mainzer, K. (2019)*. **Analyse und Optimierung urbaner Energiesysteme - Entwicklung und Anwendung eines übertragbaren Modellierungswerkzeugs zur nachhaltigen Systemgestaltung**. Karlsruhe. [![DOI:10.5445/IR/1000092481](https://zenodo.org/badge/DOI/10.5445/IR/1000092481.svg)](https://doi.org/10.5445/IR/1000092481)
