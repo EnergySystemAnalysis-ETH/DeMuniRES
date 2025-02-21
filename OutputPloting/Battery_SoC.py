@@ -27,7 +27,7 @@ data[battery_state_column] = (data[battery_state_column] / 1000.0 / battery_capa
 data_numeric = data.set_index(time)[[battery_state_column]]
 
 # Aggregate data by hour, day, and month-start
-hourly_data = data_numeric.resample('H').mean()
+hourly_data = data_numeric.resample('h').mean()
 daily_data = data_numeric.resample('D').mean()
 monthly_data = data_numeric.resample('MS').mean()  # Use 'MS' for month-start
 
