@@ -88,9 +88,9 @@
         },
         "connections": [
             {
-                "name": "from InitModelConfig to Intialisation",
+                "name": "from ModelConfig to Intialisation",
                 "from": [
-                    "InitModelConfig",
+                    "ModelConfig",
                     "right"
                 ],
                 "to": [
@@ -99,7 +99,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@InitModelConfig": {
+                        "db_url@ModelConfig": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Base": true
@@ -114,13 +114,13 @@
                 }
             },
             {
-                "name": "from Intialisation to InputDB-SpineOpt",
+                "name": "from Intialisation to Input-SpineOpt",
                 "from": [
                     "Intialisation",
                     "right"
                 ],
                 "to": [
-                    "InputDB-SpineOpt",
+                    "Input-SpineOpt",
                     "left"
                 ],
                 "options": {
@@ -157,9 +157,9 @@
                 }
             },
             {
-                "name": "from InputDB-SpineOpt to Optimisation-SpineOpt",
+                "name": "from Input-SpineOpt to Optimisation-SpineOpt",
                 "from": [
-                    "InputDB-SpineOpt",
+                    "Input-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -168,7 +168,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@InputDB-SpineOpt": {
+                        "db_url@Input-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Base": true
@@ -183,13 +183,13 @@
                 }
             },
             {
-                "name": "from Load SpineOpt template to InitModelConfig",
+                "name": "from Load SpineOpt template to ModelConfig",
                 "from": [
                     "Load SpineOpt template",
                     "right"
                 ],
                 "to": [
-                    "InitModelConfig",
+                    "ModelConfig",
                     "left"
                 ],
                 "filter_settings": {
@@ -247,9 +247,9 @@
                 }
             },
             {
-                "name": "from OutputDB-SpineOpt to Battery_state",
+                "name": "from Output-SpineOpt to Battery_state",
                 "from": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -258,7 +258,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@OutputDB-SpineOpt": {
+                        "db_url@Output-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Optimisation-SpineOpt@2024-10-11T21:12:49": true
@@ -273,9 +273,9 @@
                 }
             },
             {
-                "name": "from OutputDB-SpineOpt to Import_Elec",
+                "name": "from Output-SpineOpt to Import_Elec",
                 "from": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -284,7 +284,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@OutputDB-SpineOpt": {
+                        "db_url@Output-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Optimisation-SpineOpt@2024-10-11T21:12:49": true
@@ -299,9 +299,9 @@
                 }
             },
             {
-                "name": "from OutputDB-SpineOpt to unit_or_connection_flow_export",
+                "name": "from Output-SpineOpt to unit_or_connection_flow_export",
                 "from": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -310,7 +310,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@OutputDB-SpineOpt": {
+                        "db_url@Output-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Optimisation-SpineOpt@2024-10-11T21:12:49": true
@@ -325,9 +325,9 @@
                 }
             },
             {
-                "name": "from InputDB-SpineOpt to demand_export",
+                "name": "from Input-SpineOpt to demand_export",
                 "from": [
-                    "InputDB-SpineOpt",
+                    "Input-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -336,7 +336,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@InputDB-SpineOpt": {
+                        "db_url@Input-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Base": true
@@ -408,9 +408,9 @@
                 }
             },
             {
-                "name": "from InputDB-SpineOpt to battery_capacity",
+                "name": "from Input-SpineOpt to battery_capacity",
                 "from": [
-                    "InputDB-SpineOpt",
+                    "Input-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -419,7 +419,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@InputDB-SpineOpt": {
+                        "db_url@Input-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Base": true
@@ -434,9 +434,9 @@
                 }
             },
             {
-                "name": "from OutputDB-SpineOpt to objectives",
+                "name": "from Output-SpineOpt to objectives",
                 "from": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -445,7 +445,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@OutputDB-SpineOpt": {
+                        "db_url@Output-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Optimisation-SpineOpt@2024-10-11T21:12:49": true
@@ -479,9 +479,9 @@
                 }
             },
             {
-                "name": "from OutputDB-SpineOpt to ImportE_CHP_GasBoiler",
+                "name": "from Output-SpineOpt to ImportE_CHP_GasBoiler",
                 "from": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -490,7 +490,7 @@
                 ],
                 "filter_settings": {
                     "known_filters": {
-                        "db_url@OutputDB-SpineOpt": {
+                        "db_url@Output-SpineOpt": {
                             "scenario_filter": {},
                             "alternative_filter": {
                                 "Optimisation-SpineOpt@2024-10-11T21:12:49": true
@@ -581,13 +581,13 @@
                 }
             },
             {
-                "name": "from Optimisation-SpineOpt to OutputDB-SpineOpt",
+                "name": "from Optimisation-SpineOpt to Output-SpineOpt",
                 "from": [
                     "Optimisation-SpineOpt",
                     "right"
                 ],
                 "to": [
-                    "OutputDB-SpineOpt",
+                    "Output-SpineOpt",
                     "left"
                 ],
                 "filter_settings": {
@@ -698,40 +698,6 @@
         "jumps": []
     },
     "items": {
-        "InputDB-SpineOpt": {
-            "type": "Data Store",
-            "description": "",
-            "x": -118.74176051683166,
-            "y": -73.5564103375824,
-            "url": {
-                "dialect": "sqlite",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/inputdb-spineopt/inputdb-spineopt.sqlite"
-                },
-                "schema": ""
-            }
-        },
-        "InitModelConfig": {
-            "type": "Data Store",
-            "description": "",
-            "x": -468.6920344666825,
-            "y": -248.1737165864726,
-            "url": {
-                "dialect": "sqlite",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/initmodelconfig/initmodelconfig.sqlite"
-                },
-                "schema": ""
-            }
-        },
         "Intialisation": {
             "type": "Merger",
             "description": "",
@@ -749,7 +715,7 @@
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "db_url@InitModelConfig"
+                    "arg": "db_url@ModelConfig"
                 },
                 {
                     "type": "resource",
@@ -769,38 +735,21 @@
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "db_url@InputDB-SpineOpt"
+                    "arg": "db_url@Input-SpineOpt"
                 },
                 {
                     "type": "resource",
-                    "arg": "db_url@OutputDB-SpineOpt"
+                    "arg": "db_url@Output-SpineOpt"
                 }
             ],
             "kill_completed_processes": false,
             "log_process_output": false
         },
-        "OutputDB-SpineOpt": {
-            "type": "Data Store",
-            "description": "",
-            "x": 230.0010683928102,
-            "y": -67.33000790505722,
-            "url": {
-                "dialect": "sqlite",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/outputdb-spineopt/outputdb-spineopt.sqlite"
-                },
-                "schema": ""
-            }
-        },
         "SystemConfig": {
             "type": "Data Store",
             "description": "",
             "x": -466.47764877169624,
-            "y": -72.55828379194308,
+            "y": -74.89181638064795,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -808,7 +757,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/systemconfig/systemconfig.sqlite"
+                    "path": ".spinetoolbox/items/systemconfig/SystemConfig.sqlite"
                 },
                 "schema": ""
             }
@@ -822,7 +771,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "in_label": "db_url@Output-SpineOpt",
                     "out_label": "Battery_state"
                 }
             ],
@@ -837,7 +786,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@InputDB-SpineOpt",
+                    "in_label": "db_url@Input-SpineOpt",
                     "out_label": "InputDB-SpineOpt_exported@demand_export"
                 }
             ],
@@ -852,7 +801,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "in_label": "db_url@Output-SpineOpt",
                     "out_label": "OutputDB-SpineOpt_exported@unit_or_connection_flow_export"
                 }
             ],
@@ -867,7 +816,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "in_label": "db_url@Output-SpineOpt",
                     "out_label": "OutputDB-SpineOpt_exported@Import_Elec"
                 }
             ],
@@ -948,7 +897,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@InputDB-SpineOpt",
+                    "in_label": "db_url@Input-SpineOpt",
                     "out_label": "battery_capacity"
                 }
             ],
@@ -963,7 +912,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "in_label": "db_url@Output-SpineOpt",
                     "out_label": "OutputDB-SpineOpt_exported@objectives"
                 }
             ],
@@ -994,7 +943,7 @@
             "cancel_on_error": true,
             "output_labels": [
                 {
-                    "in_label": "db_url@OutputDB-SpineOpt",
+                    "in_label": "db_url@Output-SpineOpt",
                     "out_label": "OutputDB-SpineOpt_exported@ImportE_CHP_GasBoiler"
                 }
             ],
@@ -1079,6 +1028,57 @@
             ],
             "kill_completed_processes": false,
             "log_process_output": false
+        },
+        "Input-SpineOpt": {
+            "type": "Data Store",
+            "description": "",
+            "x": -118.74176051683166,
+            "y": -73.5564103375824,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/input-spineopt/Input-SpineOpt.sqlite"
+                },
+                "schema": ""
+            }
+        },
+        "Output-SpineOpt": {
+            "type": "Data Store",
+            "description": "",
+            "x": 230.0010683928102,
+            "y": -67.33000790505722,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/output-spineopt/Output-SpineOpt.sqlite"
+                },
+                "schema": ""
+            }
+        },
+        "ModelConfig": {
+            "type": "Data Store",
+            "description": "",
+            "x": -468.6920344666825,
+            "y": -248.1737165864726,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/modelconfig/ModelConfig.sqlite"
+                },
+                "schema": ""
+            }
         }
     }
 }
