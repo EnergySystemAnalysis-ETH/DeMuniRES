@@ -6,9 +6,9 @@ Repository for **De**centralised **Muni**cipality **R**enewable **E**nergy **S**
 
 1. Python environment for [`spinetoolbox`](https://github.com/spine-tools/Spine-Toolbox)
 
-    0. Prerequisites: Python 3.13, [git](https://git-scm.com/downloads)
+    - Prerequisites: Python 3.13, [git](https://git-scm.com/downloads)
 
-    1. Python environment setup
+    1. Set up Python environment
         
         **Option 1** (recommended) Installation in [miniconda](https://repo.anaconda.com/miniconda/)
         - In a terminal (OS cmd, PowerShell, Anaconda Prompt, etc.):    
